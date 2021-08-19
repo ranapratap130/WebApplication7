@@ -1,0 +1,17 @@
+<script>
+    $(document).ready(function () {
+        $("#btnsubmit").click(function (e) {
+            //Serialize the form datas.
+            var valdata = $("#friendform").serialize();
+            //to get alert popup
+            alert(valdata);
+            $.ajax({
+                url: "/Details/StoreEdit",
+                type: "POST",
+                dataType: 'json',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: valdata
+            });
+        });
+    });
+</script>
